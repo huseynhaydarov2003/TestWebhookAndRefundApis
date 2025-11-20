@@ -23,7 +23,7 @@ public class PaymentController : ControllerBase
     {
         _logger.LogInformation("Webhook received: {@Request}", request);
 
-        var secretKey = _config["Webhook:SecretKey"];
+        var secretKey = _config["SecretKey:Value"];
         if (string.IsNullOrEmpty(secretKey))
         {
             _logger.LogError("Missing secret key in configuration.");
